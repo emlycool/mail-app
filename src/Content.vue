@@ -9,9 +9,10 @@
                 </div>
             </form>
         </div>
-        <keep-alive>
+        <!-- <keep-alive>
             <component :is="currentView.tag" :data="currentView.data"></component>
-        </keep-alive>
+        </keep-alive> -->
+        <router-view :data="currentView.data"></router-view>
     </aside>
 </template>
 

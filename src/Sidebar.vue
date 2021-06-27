@@ -17,20 +17,19 @@
         </div>
         <ul class="inbox-nav inbox-divider">
             <li :class="{active: activeView == 'app-inbox'}">
-                <a href="#" @click.prevent="navigate('app-inbox', 'Inbox')"><i class="fa fa-inbox"></i> Inbox <span class="label label-danger pull-right">{{unreadMessages.length}}</span></a>
-
+                <router-link to="inbox"><i class="fa fa-inbox" @click.prevent="navigate('app-inbox', 'Inbox')"></i> Inbox <span class="label label-danger pull-right">{{unreadMessages.length}}</span></router-link>
             </li>
             <li :class="{active: activeView == 'app-sent'}">
-                <a href="#" @click.prevent="navigate('app-sent', 'Sent')"><i class="fa fa-envelope-o"></i> Sent Mail <span class="label label-danger pull-right">{{sentMessages.length}}</span></a>
+                <router-link to="/sent" @click.prevent="navigate('app-sent', 'Sent')"><i class="fa fa-envelope-o"></i> Sent Mail <span class="label label-danger pull-right">{{sentMessages.length}}</span></router-link>
             </li>
             <li :class="{active: activeView == 'app-important'}">
-                <a href="#" @click.prevent="navigate('app-important', 'Important')"><i class="fa fa-bookmark-o"></i> Important <span class="label label-danger pull-right">{{importantMessages.length}}</span></a>
+                <router-link to="important" @click.prevent="navigate('app-important', 'Important')"><i class="fa fa-bookmark-o"></i> Important <span class="label label-danger pull-right">{{importantMessages.length}}</span></router-link>
             </li>
             <!-- <li>
                 <a href="#" @click.prevent="navigate('app-inbox', 'Inbox')"><i class=" fa fa-external-link"></i> Drafts <span class="label label-info pull-right">30</span></a>
             </li> -->
             <li :class="{active: activeView == 'app-trash'}">
-                <a href="#" @click.prevent="navigate('app-trash', 'Trash')"><i class=" fa fa-trash-o"></i> Trash <span class="label label-danger pull-right">{{trashMessages.length}}</span></a>
+                <router-link to="trash" @click.prevent="navigate('app-trash', 'Trash')"><i class=" fa fa-trash-o"></i> Trash <span class="label label-danger pull-right">{{trashMessages.length}}</span></router-link>
             </li>
         </ul>
         <ul class="nav nav-pills nav-stacked labels-info inbox-divider">
